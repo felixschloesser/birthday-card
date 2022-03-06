@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+body {
+  background-color: #F0DCCA;
+}
+
+hr {
+  max-width: 80%;
+  height: 1px;
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  margin: auto;"
+}
+
+.card {
+  width: 80%;
+  height: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0px;
+  top: 0;
+  bottom: 0;
+
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+.card:hover, .card:active,
+.card:focus,
+.card.active {
+  transform: rotate(-5deg);
+}
+.card:hover .outside,
+.card:active .outside,
+.card:active .focus,
+.card.active {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  line-height: 2;
+  padding: 0.2em 0.3em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  left: 50%;
+  overflow: scroll;
+  font-family: "Gochi Hand", cursive;
+
+}
+
+
+
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.outside p.small {
+  max-width: 80%;
+  font-size: 0.3em;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+
+.front {
+  background-color: #ffffff;
+  overflow: hidden
+}
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+.outside p {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  margin-top: 30px;
+  letter-spacing: 6px;
+  color: #000046;
+}
+
+.outside h1 {
+  padding-top: 0.4em;
+  font-size: 5em;
+  line-height: 2em;
+}
+.inside p {
+  font-size: 1em;
+  max-width: 80%;
+  line-height: 1.2em;
+  margin-bottom: 1em;
+  margin-top: 0.8em;
+}
+.inside h1 {
+  font-size: 6em;
+  line-height: 1em;
+  padding: 0.2em;
+  padding-bottom: 0em;
+}
+
+.footer {
+  font-size: 0.5em;
+  position: absolute;
+  margin: auto;
+  bottom: 0px;
+  font-family: "Inter", sans;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .outside h1 {
+    display: none;
+  }
+  .outside p {
+    padding: 0 1em;
+    line-height: 2em;
+    font-size: 2vw;
+  }
+}

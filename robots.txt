@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://glückwunsch.felixschloesser.de/sitemap.xml
