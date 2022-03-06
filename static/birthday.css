@@ -2,10 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  overflow-wrap: break-word;
 }
 body {
-  background-color: #fdbf00;
+  background-color: #F0DCCA;
 }
 
 hr {
@@ -31,10 +31,15 @@ hr {
   perspective: 1200px;
   transition: 1s;
 }
-.card:hover {
+.card:hover, .card:active,
+.card:focus,
+.card.active {
   transform: rotate(-5deg);
 }
-.card:hover .outside {
+.card:hover .outside,
+.card:active .outside,
+.card:active .focus,
+.card.active {
   transform: rotateY(-130deg);
 }
 .outside,
@@ -51,10 +56,12 @@ hr {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   left: 50%;
   overflow: scroll;
+  font-family: "Gochi Hand", cursive;
+
 }
 
 
@@ -67,8 +74,16 @@ hr {
   transition: 2s;
   cursor: pointer;
   text-align: center;
-
+  font-family: 'Inter', sans-serif;
 }
+
+.outside p.small {
+  max-width: 80%;
+  font-size: 0.3em;
+  margin: auto;
+  margin-top: 10px;
+}
+
 .front,
 .back {
   height: 100%;
@@ -78,30 +93,50 @@ hr {
   backface-visibility: hidden;
   transform: rotateX(0deg);
 }
+
 .front {
   background-color: #ffffff;
+  overflow: hidden
 }
 .back {
   transform: rotateY(180deg);
   background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
 }
 .outside p {
-  font-size: 1em;
+  font-size: 1.3em;
   text-transform: uppercase;
   margin-top: 30px;
   letter-spacing: 6px;
   color: #000046;
 }
+
 .outside h1 {
   padding-top: 0.4em;
-  font-size: 6em;
-  line-height: 1em;
+  font-size: 5em;
+  line-height: 2em;
 }
 .inside p {
-  font-size: 0.5em;
+  font-size: 1em;
   max-width: 80%;
+  line-height: 1.2em;
+  margin-bottom: 1em;
+  margin-top: 0.8em;
 }
 .inside h1 {
   font-size: 6em;
   line-height: 1em;
+  padding: 0.2em;
+  padding-bottom: 0em;
+}
+
+
+@media (max-width: 600px) {
+  .outside h1 {
+    display: none;
+  }
+  .outside p {
+    padding: 0 1em;
+    line-height: 2em;
+    font-size: 2vw;
+  }
 }
