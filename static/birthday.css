@@ -129,6 +129,14 @@ hr {
   padding-bottom: 0em;
 }
 
+.footer {
+  font-size: 0.5em;
+  position: absolute;
+  margin: auto;
+  bottom: 0px;
+  font-family: "Inter", sans;
+  text-align: center;
+}
 
 @media (max-width: 600px) {
   .outside h1 {
